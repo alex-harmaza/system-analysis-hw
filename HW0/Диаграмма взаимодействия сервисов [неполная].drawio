@@ -1,0 +1,440 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.5">
+  <diagram id="UJAbrPJZ1F4qoCQUKXrh" name="Общая схема взимодействия сервисов">
+    <mxGraphModel dx="2514" dy="908" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4uTHOO75pign-qKUXGQA-5" value="Приложение &quot;Заказ услуг&quot;" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="470" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-3" value="Приложение &quot;Отдел расходников&quot;" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1200" width="480" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-4" value="Приложение &quot;Отдел менеджмента&quot;" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="470" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-6" value="&lt;div&gt;Kafka&lt;/div&gt;Брокер сообщений" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="910" y="410" width="280" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-7" value="«Сервис»&lt;br&gt;&lt;b&gt;Notification&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Сервис по рассылке нотификаций на почту&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="160" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-8" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-7">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-9" value="Реагируем на сообщения определенного топика,&lt;div&gt;сообщение хранит информацию для отправления письма на почту:&amp;nbsp;&lt;/div&gt;&lt;div&gt;получатель, сообщение, аттачменты&lt;/div&gt;" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-7" target="4uTHOO75pign-qKUXGQA-6">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="820" y="720" as="sourcePoint" />
+            <mxPoint x="980" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-11" value="БД" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="130" y="350" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-14" value="«FE»&lt;br&gt;&lt;b&gt;UI приложения&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-15" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-14">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-16" value="«BE»&lt;br&gt;&lt;b&gt;Совокупность микросервисов для выполнения операций клиента&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="100" y="220" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-17" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-16">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-16" target="4uTHOO75pign-qKUXGQA-14">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="470" as="sourcePoint" />
+            <mxPoint x="260" y="125" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-19" value="HTTP&amp;nbsp;&lt;div&gt;request/response&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-18">
+          <mxGeometry x="0.0914" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-11" target="4uTHOO75pign-qKUXGQA-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="390" as="sourcePoint" />
+            <mxPoint x="520" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-22" value="TCP / IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-20">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-28" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-6" target="4uTHOO75pign-qKUXGQA-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="490" as="sourcePoint" />
+            <mxPoint x="780" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-29" value="Через брокер сообщений будем&lt;div&gt;согласовывать данные по&amp;nbsp;&lt;/div&gt;&lt;div&gt;клиентам, воркерам, доступным типам услу&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ нотиификации по оплаченных инвойсам&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ общение с woker matching сервисом + Payment сервис&lt;/span&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-28">
+          <mxGeometry x="0.1303" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-31" value="«Сервис»&lt;br&gt;Сервис согласования данных&lt;br&gt;&amp;nbsp;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(клиент, воркер, типы услуг, история списания денег и т.д.)&lt;/span&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="290" y="330" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-32" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-31">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-33" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.55;exitY=0.375;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-11" target="4uTHOO75pign-qKUXGQA-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="325" y="260" as="sourcePoint" />
+            <mxPoint x="455" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-34" value="TCP / IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-33">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-45" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Функционал приложения - работа клиента с услугами:&lt;/font&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Оформление услуги&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Изменения статуса созданной услуги&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Отображение существующих услуг клиента&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Подсчет стоимости услуги с учетом скидочной программы&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;История списания денег&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Клиент - авторизованный пользователь с ролью &quot;Клиент&quot;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="100" width="280" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-56" value="БД" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="120" y="1490" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-57" value="«FE»&lt;br&gt;&lt;b&gt;UI приложения&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-58" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-57">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-59" value="«BE»&lt;br&gt;&lt;b&gt;Совокупность микросервисов для выполнения операций отдела&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1360" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-60" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-59">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-61" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-59" target="4uTHOO75pign-qKUXGQA-57">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="1610" as="sourcePoint" />
+            <mxPoint x="340" y="1265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-62" value="HTTP&amp;nbsp;&lt;div&gt;request/response&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-61">
+          <mxGeometry x="0.0914" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-63" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-56" target="4uTHOO75pign-qKUXGQA-59">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="1530" as="sourcePoint" />
+            <mxPoint x="510" y="1480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-64" value="TCP / IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-63">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-76" value="БД" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="120" y="890" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-77" value="«FE»&lt;br&gt;&lt;b&gt;UI приложения&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-78" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-77">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-79" value="«BE»&lt;br&gt;&lt;b&gt;Совокупность микросервисов для выполнения операций менеджера&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="760" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-80" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-79">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-81" value="HTTP&amp;nbsp;&lt;div&gt;request/response&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="153" y="737.9310344827586" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-82" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-76" target="4uTHOO75pign-qKUXGQA-79">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="930" as="sourcePoint" />
+            <mxPoint x="510" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-83" value="TCP / IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-82">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-84" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Менеджер - пользователь с ролью &quot;Менеджер&quot;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Менеджеру доступны:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Список заявок кандидатов в воркеры а также статус заявки (обработано, кандидат принят, отвергнут)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Добавление/редактирование новых типов услуг для клиента (типы операций будут согласовываться с приложением &quot;Заказ услуг&quot;)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Список воркеров и подробное описание по каждому воркеру (имя, возраст, порода, цвет шерсти и т.д.)&lt;/font&gt;&lt;/li&gt;&lt;li&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Список заявок на услуги с их статусом&amp;nbsp; (сокращенное описание услуг будет храниться в БД приложения, данные согласуются с приложением &quot;Заказ услуг&quot; и приложением &quot;Воркер система&quot; через сервис согласования данных)&lt;br&gt;Система ставок&lt;/font&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="650" width="280" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-85" value="«Сервис»&lt;br&gt;Сервис согласования данных&lt;br&gt;&amp;nbsp;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(клиент, типы услуг, и т.д.)&lt;/span&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="280" y="930" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-86" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-85">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-89" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.009;entryY=0.452;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-76" target="4uTHOO75pign-qKUXGQA-85">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530" y="760" as="sourcePoint" />
+            <mxPoint x="580" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-90" value="TCP/IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-89">
+          <mxGeometry x="0.0684" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.6;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-6" target="4uTHOO75pign-qKUXGQA-85">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="520" />
+              <mxPoint x="650" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-92" value="Через брокер сообщений&amp;nbsp;&lt;div&gt;будем согласовывать данные&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ отправка нотификаций&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ общение с woker matching сервисом&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-91">
+          <mxGeometry x="-0.0555" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-97" value="«Сервис»&lt;br&gt;&lt;b&gt;Worker Matching Service&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Сервис по подбору воркера под услугу + расчета стоимости услуги&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="780" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-98" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-97">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-99" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.895;exitY=1.005;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-6" target="4uTHOO75pign-qKUXGQA-97">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="710" y="630" as="sourcePoint" />
+            <mxPoint x="760" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-100" value="Получение и отправка результатов&amp;nbsp;&lt;div&gt;по подбору воркера для услуги&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-99">
+          <mxGeometry x="-0.2288" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-102" value="Приложение &quot;Страница визитка&quot;" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-750" y="615" width="480" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-103" value="«Сервис»&lt;br&gt;&lt;b&gt;SSO Service&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Сервис авторизации готовит JWT токен который хранит роль пользователя&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="490" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-104" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-103">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-105" value="Text" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="800" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-106" value="Text" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="800" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-107" value="Text" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="800" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-108" value="&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;По факту это UI с&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;начальной страницей,&amp;nbsp;&lt;/li&gt;&lt;li&gt;страницей оформления заявки на кандидата-воркера,&lt;/li&gt;&lt;li&gt;Возможность авторизации через форму логин-пароль после чего пользователь будет перенаправлен на нужное приложение в зависимости от его роли&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-705" y="728.96" width="390" height="152.07" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-112" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.006;exitY=0.117;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-102" target="4uTHOO75pign-qKUXGQA-103">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-190" y="810" as="sourcePoint" />
+            <mxPoint x="-140" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-113" value="Http request/response" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-112">
+          <mxGeometry x="-0.0008" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-114" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-103">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-76" y="480" as="sourcePoint" />
+            <mxPoint x="80" y="388" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-115" value="Http request/response" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-114">
+          <mxGeometry x="-0.0008" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-116" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=5;entryDy=465;exitX=0.666;exitY=0.997;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-103" target="4uTHOO75pign-qKUXGQA-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="34" y="592" as="sourcePoint" />
+            <mxPoint x="190" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-117" value="Http request/response" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-116">
+          <mxGeometry x="-0.0008" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-118" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0;entryDx=5;entryDy=475;entryPerimeter=0;exitX=0.389;exitY=1.028;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-103" target="4uTHOO75pign-qKUXGQA-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-110" y="1090" as="sourcePoint" />
+            <mxPoint x="-60" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-119" value="Http request/response" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-118">
+          <mxGeometry x="-0.1201" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-120" value="Приложение &quot;Воркер система&quot;" style="verticalAlign=top;align=left;spacingTop=8;spacingLeft=2;spacingRight=12;shape=cube;size=10;direction=south;fontStyle=4;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="1720" width="480" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-121" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.165;exitY=0.959;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=195;entryDy=480;entryPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-103" target="4uTHOO75pign-qKUXGQA-120">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-230" y="1730" as="sourcePoint" />
+            <mxPoint x="-180" y="1680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-122" value="Http request/response" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-121">
+          <mxGeometry x="-0.4602" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-124" value="Роли для доступа: Подрядчик (П), рабочий отдела расходников (РОР)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;[РОР] Получение информации о заказе на сборку для воркера&lt;/div&gt;&lt;div&gt;[РОР] Изменение статуса заказа воркера (Выполнен, ждем печенье)&lt;/div&gt;&lt;div&gt;[П] Получения списка заказов для которых нужно печенье&lt;/div&gt;&lt;div&gt;[РОР] Формирование бланка о приема работы [Инфоомацию получаем от запроса воркера через Kafka]&lt;br&gt;&lt;br&gt;В зависимости от роли контент на сайте будет отличаться - отображается что положено в зависимости от роли&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="1250" width="225" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-130" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=185;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-3" target="4uTHOO75pign-qKUXGQA-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="1210" as="sourcePoint" />
+            <mxPoint x="750" y="1160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-131" value="Получение информации по заявке воркера,&amp;nbsp;&lt;div&gt;Оправка нотификации воркеру о готовности заказа,&amp;nbsp;&lt;/div&gt;&lt;div&gt;изменение статуса заявки&amp;nbsp;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-130">
+          <mxGeometry x="0.0536" y="-1" relative="1" as="geometry">
+            <mxPoint x="-1" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-134" value="БД" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="140" y="2010" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-135" value="«FE»&lt;br&gt;&lt;b&gt;UI приложения&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1760" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-136" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-135">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-137" value="«BE»&lt;br&gt;&lt;b&gt;Совокупность микросервисов для выполнения операций воркера&lt;/b&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="110" y="1880" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-138" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-137">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-139" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-137" target="4uTHOO75pign-qKUXGQA-135">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="2130" as="sourcePoint" />
+            <mxPoint x="360" y="1785" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-140" value="HTTP&amp;nbsp;&lt;div&gt;request/response&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-139">
+          <mxGeometry x="0.0914" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-141" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-134" target="4uTHOO75pign-qKUXGQA-137">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="2050" as="sourcePoint" />
+            <mxPoint x="530" y="2000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-142" value="TCP / IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-141">
+          <mxGeometry x="-0.0571" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-143" value="&lt;ul&gt;&lt;li&gt;Список назначенных, отмененных заказов, завершенных заказов воркера&lt;/li&gt;&lt;li&gt;Отправка фотографии для статуса &quot;Приступил&quot;&lt;/li&gt;&lt;li&gt;Отправка фотографии с подписью клиента для статуса &quot;Сделал&quot;&lt;/li&gt;&lt;li&gt;Формирование запроса на выдачу заказа в отделе расходников&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="1785" width="260" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-146" value="«Сервис»&lt;br&gt;Сервис согласования данных&lt;br&gt;&amp;nbsp;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(клиент, типы услуг, воркер, и т.д.)&lt;/span&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="290" y="2020" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-147" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-146">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-148" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.535;exitY=0.422;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-134" target="4uTHOO75pign-qKUXGQA-146">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="1920" as="sourcePoint" />
+            <mxPoint x="530" y="1870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-149" value="TCP/IP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-148">
+          <mxGeometry x="0.2114" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-150" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-146" target="4uTHOO75pign-qKUXGQA-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="1040" as="sourcePoint" />
+            <mxPoint x="620" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-151" value="Согласование данных" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-150">
+          <mxGeometry x="0.1961" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-152" value="«Сервис»&lt;br&gt;&lt;b&gt;Payment Service&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Сервис оплаты заказов + генерация инвойсов для клиента/воркера (хранит историю оплаты + сгенерированные инвойсы)&lt;/b&gt;&lt;/div&gt;" style="html=1;dropTarget=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1070" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-153" value="" style="shape=module;jettyWidth=8;jettyHeight=4;" vertex="1" parent="4uTHOO75pign-qKUXGQA-152">
+          <mxGeometry x="1" width="20" height="20" relative="1" as="geometry">
+            <mxPoint x="-27" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-154" value="БД" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="985" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-155" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-152" target="4uTHOO75pign-qKUXGQA-154">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="610" y="1240" as="sourcePoint" />
+            <mxPoint x="660" y="1190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-156" value="TCP/IP&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-155">
+          <mxGeometry x="-0.0212" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-157" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.658;entryY=1.02;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4uTHOO75pign-qKUXGQA-152" target="4uTHOO75pign-qKUXGQA-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="790" y="850" as="sourcePoint" />
+            <mxPoint x="840" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4uTHOO75pign-qKUXGQA-158" value="Предоставление информации об оплате + обработка запросов на оплату" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="4uTHOO75pign-qKUXGQA-157">
+          <mxGeometry x="-0.4782" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
